@@ -3,17 +3,7 @@
   "version": "1.0.0",
   "description": "learning mongo node express",
   "main": "app.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier:check"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.ts app.ts server.ts": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
+  
   "scripts": {
     "start": "nodemon",
     "build": "NODE_ENV=production nodemon",
@@ -22,6 +12,17 @@
     "prettier": "prettier src/**/*.ts app.ts server.ts",
     "prettier:fix": "prettier --write src/**/*.ts app.ts server.ts",
     "prettier:check": "prettier --config .prettierrc --check src/**/*.{ts,css,html} app.ts server.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,css,html} app.ts server.ts": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "keywords": [
     "mongo",
