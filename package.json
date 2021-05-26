@@ -13,10 +13,8 @@
     "prettier:check": "prettier --config .prettierrc --check src/**/*.{ts,css,html} app.ts server.ts"
   },
   "lint-staged": {
-    "src/**/*.{ts,css,html}": [
-      "echo 'hello'",
-      "eslint --fix",
-      "git add"
+    "*.{js,css,md,ts,tsx}": [
+      "eslint --fix "
     ]
   },
   "husky": {
