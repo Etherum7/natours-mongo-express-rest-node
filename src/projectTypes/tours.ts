@@ -1,3 +1,18 @@
+export interface LocationsEntity {
+  _id: string;
+  description: string;
+  type: string;
+  coordinates?: number[] | null;
+  day: number;
+}
+
+export interface StartLocation {
+  description: string;
+  type: string;
+  coordinates?: number[] | null;
+  address: string;
+}
+
 export interface SimpleTour {
   id: number;
   name: string;
@@ -13,8 +28,6 @@ export interface SimpleTour {
   images?: string[] | null;
   startDates?: string[] | null;
 }
-
-
 
 export interface Tour {
   startLocation: StartLocation;
@@ -33,17 +46,4 @@ export interface Tour {
   description: string;
   imageCover: string;
   locations?: LocationsEntity[] | null;
-}
-export interface StartLocation {
-  description: string;
-  type: string;
-  coordinates?: number[] | null;
-  address: string;
-}
-export interface LocationsEntity {
-  _id: string;
-  description: string;
-  type: string;
-  coordinates?: number[] | null;
-  day: number;
 }

@@ -1,16 +1,21 @@
-//packages
+// packages
 import express from 'express';
 import morgan from 'morgan';
-//local
+import path from 'path';
+// local
 import tourRouter from '@routes/tourRoutes';
 import userRouter from '@routes/userRoutes';
 
 const app = express();
 
-//middlewares
+// middlewares
 app.use(express.json());
-app.use(morgan('dev'));
-//routes
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+app.use(express.static(path.join(__dirname, 'public')));
+// routes
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
