@@ -14,6 +14,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,css,html} app.ts server.ts ": [
+      "echo 'hello'",
       "eslint --fix",
       "git add"
     ]
