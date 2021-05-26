@@ -19,7 +19,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,css,html} app.ts server.ts": [
+    "src/**/*.{ts,css,html}": [
       "eslint --fix",
       "git add"
     ]
