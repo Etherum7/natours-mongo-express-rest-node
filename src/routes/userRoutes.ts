@@ -3,6 +3,7 @@ import {
   deleteUser,
   getAllUsers,
   getUser,
+  
   updateUser,
 } from '@controllers/userController';
 import express from 'express';
