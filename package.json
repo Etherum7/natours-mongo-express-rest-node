@@ -5,7 +5,7 @@
   "main": "app.js",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier"
+      "pre-commit": "npm run prettier:check"
     }
   },
   "lint-staged": {
@@ -20,7 +20,8 @@
     "eslint": "eslint src/**/*.ts app.ts server.ts",
     "eslint:fix": "eslint --fix src/**/*.ts app.ts server.ts",
     "prettier": "prettier src/**/*.ts app.ts server.ts",
-    "prettier:fix": "prettier --write src/**/*.ts app.ts server.ts"
+    "prettier:fix": "prettier --write src/**/*.ts app.ts server.ts",
+    "prettier:check": "prettier --config .prettierrc --check src/**/*.{ts,css,html} app.ts server.ts"
   },
   "keywords": [
     "mongo",
